@@ -7,6 +7,7 @@ public class Exercicio50 extends javax.swing.JFrame {
         initComponents();
         lblExibicao.setVisible(false);
         lblMaiorQue5.setVisible(false);
+        lblDivisiveis.setVisible(false);
     }
 
    
@@ -154,8 +155,26 @@ public class Exercicio50 extends javax.swing.JFrame {
         this.repaint();
     }
     
+    private int posicaoYDivisivel = 280;
+    private int posicaoXDivisivel = 10;
+    
     private void divisiveisPor3(int divisivel){
+        lblDivisiveis.setVisible(true);
+        posicaoXDivisivel += 20;
         
+        if(posicaoXDivisivel == 350){
+            posicaoYDivisivel += 30;
+            posicaoXDivisivel = 30;
+        }
+        
+        JLabel lbl = new JLabel();
+        lbl.setText(divisivel + ", ");
+        lbl.setVisible(true);
+        lbl.setSize(150, 70);
+        lbl.setLocation(posicaoXDivisivel, posicaoYDivisivel);
+        this.add(lbl);
+        this.revalidate();
+        this.repaint();
     }
 
     public static void main(String args[]) {
